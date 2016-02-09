@@ -191,7 +191,7 @@ shinyUI(dashboardPage(skin = "green",
           h3("When the point is finished, select 'Next point'. There are also buttons to clear the current or previous point in case you need to make a correction as you go along."),
      		 	h3("The coded point is described at the top of the page and the current score of the match is shown in the scoreboard at the top right. All points are stored on the server and the complete set of points can be downloaded at any time, using the download command on the left sidebar."),
      	h2("Chart Submission", style="text-decoration:underline;"),	 	
-           h3("When your chart is completed, download the CSV and you can send it as-is to the project maintainer, Jeff Sackmann (",code("jeffsackmann@gmail.com"),"), for inlusion in the MCP. If you had to use multiple files for a single match, you will need to append and format these manually before sending."),      		 	
+           h3("When your chart is completed, download the CSV and you can send it as-is to the project maintainer, Jeff Sackmann (",code("jeffsackmann@gmail.com"),"), for inclusion in the MCP. If you had to use multiple files for a single match, you will need to append and format these manually before sending."),      		 	
           h2("Resources", style="text-decoration:underline;"),
      		 	h3("For further information about contributing to the MCP, visit this", a("site", href = "http://www.tennisabstract.com/blog/2015/09/23/the-match-charting-project-quick-start-guide/"), "."),
      		 	h3("For questions or feedback about this site, contact",code("s.a.kovalchik@gmail.com."))
