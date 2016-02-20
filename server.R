@@ -111,10 +111,13 @@ match_score <- function(data){
 		server_ended_point <- sapply(point_deciding, function(x){
 			length(grep("[fbrsvzhijklmuyoptq]", strsplit(x, split = "")[[1]])) %% 2 == 0
 		})
-	
+
+		hadrally <- grepl("[fbrsvzhijklmuyoptq]", point_deciding)
 		server_ended_point[double_fault[1:length(point_deciding)]] <- TRUE
 		ended_winner <- grepl("*", point_deciding, fixed = TRUE)
-		serve_won <- (server_ended_point & ended_winner) | (!server_ended_point & !ended_winner)
+		serve_ending <- grepl("[\\*\\#]", point_deciding)
+
+		serve_won <- (server_ended_point & ended_winner) | (!server_ended_point & !ended_winner) | (!hadrally & serve_ending)
 	
 	return(serve_won)
 	}
@@ -616,6 +619,8 @@ translate <- function(seq){
 
 	if(grepl("Winner", seq[1]))
 		seq[1] <- sub("Winner", "Ace", seq[1])
+	if(grepl("Forced", seq[1]))
+		seq[1] <- sub("Forced Error", "Unreturnable", seq[1])
 
 paste(seq, collapse = "/", sep = "")
 }
